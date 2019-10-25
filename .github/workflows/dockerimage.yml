@@ -12,7 +12,7 @@ jobs:
       run: |
         TAG=$(date +%s)
         docker build . --file Dockerfile --tag docker.pkg.github.com/larryms-dockerrepos/dummies/demobuild:$TAG
-        docker login docker.pkg.github.com -u larryms-dockerrepos -p ${{ secrets.GITHUB_TOKEN }}
+        docker login docker.pkg.github.com -u larryms -p ${{ secrets.GITHUB_TOKEN }}
         docker images
         docker push docker.pkg.github.com/larryms-dockerrepos/dummies/demobuild:$TAG
         
